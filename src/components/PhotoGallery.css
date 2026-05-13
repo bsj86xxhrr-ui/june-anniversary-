@@ -1,0 +1,175 @@
+.photo-section-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.photo-upload-box {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 4 / 3;
+  border: 3px dashed #8b5cf6;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(99, 102, 241, 0.05));
+  transition: all 0.3s ease;
+}
+
+.photo-upload-box:hover {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-icon {
+  font-size: 4rem;
+}
+
+.upload-text {
+  font-size: 1.1rem;
+  color: #8b5cf6;
+  font-weight: 600;
+}
+
+.main-photo-display {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.main-photo-display img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.delete-photo-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 107, 107, 0.9);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.delete-photo-btn:hover {
+  background: rgba(255, 107, 107, 1);
+  transform: scale(1.1);
+}
+
+.photo-gallery {
+  width: 100%;
+}
+
+.photo-upload-box-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #8b5cf6;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(99, 102, 241, 0.05));
+  transition: all 0.3s ease;
+  font-size: 2rem;
+  color: #8b5cf6;
+  font-weight: bold;
+}
+
+.photo-upload-box-small:hover {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+}
+
+.upload-icon-small {
+  line-height: 1;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.delete-photo-btn-small {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255, 107, 107, 0.9);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover .delete-photo-btn-small {
+  opacity: 1;
+}
+
+.delete-photo-btn-small:hover {
+  background: rgba(255, 107, 107, 1);
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .photo-upload-box {
+    max-width: 100%;
+  }
+
+  .main-photo-display {
+    max-width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+  }
+}

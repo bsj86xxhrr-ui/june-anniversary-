@@ -1,0 +1,126 @@
+.surprise-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px 0;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.surprise-section h2 {
+  font-size: 2rem;
+  color: #8b5cf6;
+  margin-bottom: 30px;
+}
+
+.box-container {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gift-box {
+  font-size: 120px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: box-bounce 2s infinite;
+  user-select: none;
+}
+
+.gift-box:hover {
+  transform: scale(1.1) rotate(-5deg);
+  filter: drop-shadow(0 10px 20px rgba(255, 105, 180, 0.4));
+}
+
+.gift-box.open {
+  animation: box-open 0.6s ease-out;
+}
+
+.box-top {
+  font-size: 60px;
+  margin-bottom: 10px;
+  animation: box-top-bounce 0.8s ease-out;
+}
+
+.box-body {
+  font-size: 100px;
+}
+
+.box-face {
+  display: inline-block;
+}
+
+.love-message {
+  font-size: 1.3rem;
+  color: #ff1493;
+  font-weight: bold;
+  margin-top: 20px;
+  animation: message-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #ffe5ec, #fff0f5);
+  border-radius: 15px;
+  border: 2px solid #ff69b4;
+}
+
+.heart-spray {
+  position: fixed;
+  font-size: 30px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+@keyframes box-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes box-open {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes box-top-bounce {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes message-pop {
+  0% {
+    transform: scale(0) rotateY(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes heart-spray {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500px) scale(0);
+    opacity: 0;
+  }
+}
